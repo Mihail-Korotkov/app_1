@@ -29,9 +29,11 @@ class Products(models.Model):
     category = models.ForeignKey(to=Categories, on_delete=models.CASCADE,verbose_name="Категория")
 
     class Meta:
+
         db_table = 'product'
         verbose_name ="Продукт"
         verbose_name_plural = "Продукты"
+        ordering = ("id",)
         
     def __str__(self):
         return self.name
