@@ -1,16 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>заголовок теста</title>
-    
+    <title>Страница приветствия</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            /* Устанавливаем фоновое изображение */
+            background-image: url('https://sun9-7.userapi.com/s/v1/ig2/HW1zeiuZVWjM4l5AE0DCuWCNEArElaHv9mlS_sYTyJSXEnO4welKJLu6UGKVuyS5sSfigyWasWB7E4rpbmcHVV0F.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,853x1280&from=bu&cs=853x0');
+            
+            /* Настройки фона */
+            background-size: cover;        /* Изображение покрывает всю область */
+            background-position: center;   /* Центрирование */
+            background-repeat: no-repeat;  /* Без повторения */
+            background-attachment: fixed;  /* Фон фиксирован при прокрутке */
+        }
+
+        /* Делаем шапку и футер полупрозрачными для читаемости */
+        header {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px 40px;
+            border-bottom: 2px solid #ddd;
+            backdrop-filter: blur(5px); /* Лёгкое размытие фона за шапкой */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        main img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+            /* Добавляем белую подложку для фото, чтобы оно было видно на любом фоне */
+            background-color: white;
+            padding: 5px;
+        }
+
+        .product-list {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product-list li a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 8px;
+            transition: all 0.3s;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон для кнопок */
+        }
+
+        .product-list li a:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #007bff;
+            border-color: #007bff;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            padding: 25px 20px;
+            border-top: 2px solid #ddd;
+            backdrop-filter: blur(5px);
+        }
+
+        footer p {
+            font-size: 22px;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.45);
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
 <body>
-   <h1>Большой заголовок</h1>
-   <br>
-   <p>текст поменьше</p>
-   <br>
-   <img src="https://s09.stc.yc.kpcdn.net/share/i/12/15170528/de-1200.jpg" alt="солдатик">
+    <!-- Шапка с навигацией -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Производства</a></li>
+                <li><a href="#">Стать партнёром</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Фото (затычка #) -->
+        <img src="#" alt="фото">
+
+        <!-- Неупорядоченный список товаров с ссылками -->
+        <ul class="product-list">
+            <li><a href="#">Хлеб</a></li>
+            <li><a href="#">Яйца</a></li>
+            <li><a href="#">Мука</a></li>
+        </ul>
+    </main>
+
+    <!-- Футер с телефоном -->
+    <footer>
+        <p>+7 345 355 35 53</p>
+    </footer>
 </body>
 </html>
