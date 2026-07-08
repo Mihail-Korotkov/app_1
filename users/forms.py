@@ -1,6 +1,8 @@
+import email
+
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.forms import CharField
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm 
+from django.forms import CharField, ImageField
 
 from users.models import User
 
@@ -54,4 +56,22 @@ class UserRegistrationForm(UserCreationForm):
     email = forms.EmailField()
     password1 = forms.CharField()
     password2 = forms.CharField()
+
+
+class ProfileForm(UserChangeForm):
+        class Meta:
+            model = User
+            fields = ('image',
+                      'first_name',
+                      'last_name',
+                      'username',
+                      'email',)
+            
+        image = ImageField(required=False)
+        first_name = CharField()
+        last_name = CharField()
+        username = CharField()
+        email = CharField()
+
+
 
