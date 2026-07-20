@@ -1,3 +1,5 @@
+from unicodedata import category
+
 from django.contrib import admin
 
 # Register your models here.
@@ -14,3 +16,18 @@ class CategoriesAdmin(admin.ModelAdmin):
 @admin.register(Products)
 class ProductsAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug':('name',)}
+    list_display = ['name','quantity','price','discount']
+    list_editable = ['discount']
+    search_fields = ['name','description']
+    fields = [
+        'name',
+        'category',
+        'slug',
+        'description',
+        'image',
+        'quantity'
+        
+
+    ]
+    list_filter = ['discount','category','quantity']
+    
